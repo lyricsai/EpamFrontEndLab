@@ -160,7 +160,8 @@ li span {
         }
         
         & aside {
-            transform: translateY( 0);
+            transform: translateY(0);
+
             & .aside__contacts li {
                 display: inline-block;
                 padding: 5px;
@@ -171,9 +172,11 @@ li span {
     .wrapper.flexbox {
         flex-direction: column;
         justify-content: center;
+
         & main {
             text-align: center;
             width: 100%;
+            
             & .main__skills ul {
                 justify-content: space-between;
             }
