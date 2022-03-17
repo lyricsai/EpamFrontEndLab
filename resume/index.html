@@ -1,199 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Resume</title>
+        <link rel="stylesheet" href="./style.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-
-<body>
-    <div class="container">
-        <header>
-        <form action="">
-            <label for="inline-block">Inline-Block</label>
-            <input type="radio" id="inline-block" name="view" onclick="check()" checked>
-            <label for="flexbox">Flexbox</label>
-            <input type="radio" id="flexbox" name="view" onclick="check()">
-        </form>
-    </header>
-        <div class="wrapper inline-block">
-            <aside>
-                <section class="aside__info">
-                    <div class="aside__photo">
-                        <img src="./assets/avatar.jpg" alt="photo">
-                    </div>
-                    <h1 class="aside__name">Anastasiya Litvinenka</h1>
-                    <h3 class="aside__position">Front-End Developer</h3>
-                </section>
-                <section class="aside__contacts">
-                    <ul>
-                        <li><a href="mailto:anastasiya_litvinenka@epam.com">Email</a></li>
-                        <li><a href="https://github.com/lyricsai" target="_blank">Github</a></li>
-                        <li><a href="https://github.com/lyricsai" target="_blank">LinkedIn</a></li>
-                    </ul>
-                </section>
-                <section class="aside__languages">
-                    <h2>Languages</h2>
-                    <ul>
-                        <li>English - Upper Intermediate</li>
-                        <li>Russian - Native</li>
-                    </ul>
-                </section>
-            </aside>
-            <main>
-                <section class="main__skills">
-                    <h2>Skills</h2>
-                    <ul>
-                        <li>Git</li>
-                        <li>HTML</li>
-                        <li>CSS, SCSS</li>
-                        <li>JavaScript</li>
-                        <li>React</li>
-                        <li>TypeScript</li>
-                    </ul>
-                </section>
-                <section class="main__experience">
-                    <h2>Experience</h2>
-                    <ul>
-                        <li> <span> Sun Project</span>
-                            <br />Responsible for presenting students' portfolios
-                            of an Art School Agency.
-                            <br />
-                            (E-commerce in React / Redux)
-                        </li>
-                        <li> <span>Landing pages</span> (HTML, CSS, Javascript)</li>
-                        <li> <span>2016 - 2021</span> - Freelance Artist
-                        </li>
-                        <li> <span>August 2013 - July 2016</span> - Phisician
-                        </li>
-                    </ul>
-                </section>
-                <section class="main__education">
-                    <h2>Education</h2>
-                    <ul>
-                        <li> <span>March 2022 - current</span> - Epam Systems University Front-End
-                            Lab
-                        </li>
-                        <li> <span>February 2022 - current</span> - RS School Front-End Development
-                            (Lt)
-                        </li>
-                        <li> <span>October 2021 - January 2022</span> - Epam Systems Front-End
-                            Outside
-                            Training
-                        </li>
-                        <li> <span>July 2021 – February 2022</span> - FreeCodeCamp.org - Front-End
-                            Development
-                        </li>
-                        <li> <span>April 2021 – June 2021</span> - HTML, CSS course</li>
-                        <li> <span>September 2016 – May 2021</span> - Art School “Kluch”, Gomel,
-                            Belarus
-                        </li>
-                        <li><span> September 2007 – June 2013</span> - GSMU, Gomel, Belarus - Doctor
-                            of
-                            Medicine
-                        </li>
-                    </ul>
-                </section>
-            </main>
+    <body>
+        <div class="container">
+            <header>
+                <form action="">
+                    <label for="inline-block">Inline-Block</label>
+                    <input type="radio" id="inline-block" name="view" onclick="check()" checked />
+                    <label for="flexbox">Flexbox</label>
+                    <input type="radio" id="flexbox" name="view" onclick="check()" />
+                </form>
+            </header>
+            <div class="wrapper inline-block">
+                <aside>
+                    <section class="aside__info">
+                        <div class="aside__photo">
+                            <img src="./assets/avatar.jpg" alt="photo" />
+                        </div>
+                        <h1 class="aside__name">Anastasiya Litvinenka</h1>
+                        <h3 class="aside__position">Front-End Developer</h3>
+                    </section>
+                    <section class="aside__contacts">
+                        <ul>
+                            <li><a href="mailto:anastasiya_litvinenka@epam.com">Email</a></li>
+                            <li>
+                                <a href="https://github.com/lyricsai" target="_blank">Github</a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/lyricsai" target="_blank">LinkedIn</a>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="aside__languages">
+                        <h2>Languages</h2>
+                        <ul>
+                            <li>English - Upper Intermediate</li>
+                            <li>Russian - Native</li>
+                        </ul>
+                    </section>
+                </aside>
+                <main>
+                    <section class="main__skills">
+                        <h2>Skills</h2>
+                        <ul>
+                            <li>Git</li>
+                            <li>HTML</li>
+                            <li>CSS, SCSS</li>
+                            <li>JavaScript</li>
+                            <li>React</li>
+                            <li>TypeScript</li>
+                        </ul>
+                    </section>
+                    <section class="main__experience">
+                        <h2>Experience</h2>
+                        <ul>
+                            <li>
+                                <span> Sun Project</span> <br />Responsible for presenting students'
+                                portfolios of an Art School Agency.
+                                <br />
+                                (E-commerce in React / Redux)
+                            </li>
+                            <li><span>Landing pages</span> (HTML, CSS, Javascript)</li>
+                            <li><span>2016 - 2021</span> - Freelance Artist</li>
+                            <li><span>August 2013 - July 2016</span> - Phisician</li>
+                        </ul>
+                    </section>
+                    <section class="main__education">
+                        <h2>Education</h2>
+                        <ul>
+                            <li>
+                                <span>March 2022 - current</span> - Epam Systems University
+                                Front-End Lab
+                            </li>
+                            <li>
+                                <span>February 2022 - current</span> - RS School Front-End
+                                Development (Lt)
+                            </li>
+                            <li>
+                                <span>October 2021 - January 2022</span> - Epam Systems Front-End
+                                Outside Training
+                            </li>
+                            <li>
+                                <span>July 2021 – February 2022</span> - FreeCodeCamp.org -
+                                Front-End Development
+                            </li>
+                            <li><span>April 2021 – June 2021</span> - HTML, CSS course</li>
+                            <li>
+                                <span>September 2016 – May 2021</span> - Art School “Kluch”, Gomel,
+                                Belarus
+                            </li>
+                            <li>
+                                <span> September 2007 – June 2013</span> - GSMU, Gomel, Belarus -
+                                Doctor of Medicine
+                            </li>
+                        </ul>
+                    </section>
+                </main>
+            </div>
+            <div class="wrapper flexbox">
+                <aside>
+                    <section class="aside__info">
+                        <div class="aside__photo">
+                            <img src="./assets/avatar.jpg" alt="photo" />
+                        </div>
+                        <h1 class="aside__name">Anastasiya Litvinenka</h1>
+                        <h3 class="aside__position">Front-End Developer</h3>
+                    </section>
+                    <section class="aside__contacts">
+                        <ul>
+                            <li><a href="mailto:anastasiya_litvinenka@epam.com">Email</a></li>
+                            <li>
+                                <a href="https://github.com/lyricsai" target="_blank">Github</a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/lyricsai" target="_blank">LinkedIn</a>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="aside__languages">
+                        <h2>Languages</h2>
+                        <ul>
+                            <li>English - Upper Intermediate</li>
+                            <li>Russian - Native</li>
+                        </ul>
+                    </section>
+                </aside>
+                <main>
+                    <section class="main__skills">
+                        <h2>Skills</h2>
+                        <ul>
+                            <li>Git</li>
+                            <li>HTML</li>
+                            <li>CSS, SCSS</li>
+                            <li>JavaScript</li>
+                            <li>React</li>
+                            <li>TypeScript</li>
+                        </ul>
+                    </section>
+                    <section class="main__experience">
+                        <h2>Experience</h2>
+                        <ul>
+                            <li>
+                                <span> Sun Project</span>
+                                <br />Responsible for presenting students' portfolios of an Art
+                                School Agency.
+                                <br />
+                                (E-commerce in React / Redux)
+                            </li>
+                            <li><span> Landing pages</span> (HTML, CSS, Javascript)</li>
+                            <li><span>2016 - 2021</span> - Freelance Artist</li>
+                            <li><span>August 2013 - July 2016</span> - Phisician</li>
+                        </ul>
+                    </section>
+                    <section class="main__education">
+                        <h2>Education</h2>
+                        <ul>
+                            <li>
+                                <span>March 2022 - current</span> - Epam Systems University
+                                Front-End Lab
+                            </li>
+                            <li>
+                                <span>February 2022 - current </span>- RS School Front-End
+                                Development (Lt)
+                            </li>
+                            <li>
+                                <span>October 2021 - January 2022</span> - Epam Systems Front-End
+                                Outside Training
+                            </li>
+                            <li>
+                                <span>July 2021 – February 2022</span> - FreeCodeCamp.org -
+                                Front-End Development
+                            </li>
+                            <li><span>April 2021 – June 2021</span> - HTML, CSS course</li>
+                            <li>
+                                <span>September 2016 – May 2021</span> - Art School “Kluch”, Gomel,
+                                Belarus
+                            </li>
+                            <li>
+                                <span> September 2007 – June 2013</span> - GSMU, Gomel, Belarus -
+                                Doctor of Medicine
+                            </li>
+                        </ul>
+                    </section>
+                </main>
+            </div>
         </div>
-        <div class="wrapper flexbox">
-            <aside>
-                <section class="aside__info">
-                    <div class="aside__photo">
-                        <img src="./assets/avatar.jpg" alt="photo">
-                    </div>
-                    <h1 class="aside__name">Anastasiya Litvinenka</h1>
-                    <h3 class="aside__position">Front-End Developer</h3>
-                </section>
-                <section class="aside__contacts">
-                    <ul>
-                        <li><a href="mailto:anastasiya_litvinenka@epam.com">Email</a></li>
-                        <li><a href="https://github.com/lyricsai" target="_blank">Github</a></li>
-                        <li><a href="https://github.com/lyricsai" target="_blank">LinkedIn</a></li>
-                    </ul>
-                </section>
-                <section class="aside__languages">
-                    <h2>Languages</h2>
-                    <ul>
-                        <li>English - Upper Intermediate</li>
-                        <li>Russian - Native</li>
-                    </ul>
-                </section>
-            </aside>
-            <main>
-                <section class="main__skills">
-                    <h2>Skills</h2>
-                    <ul>
-                        <li>Git</li>
-                        <li>HTML</li>
-                        <li>CSS, SCSS</li>
-                        <li>JavaScript</li>
-                        <li>React</li>
-                        <li>TypeScript</li>
-                    </ul>
-                </section>
-                <section class="main__experience">
-                    <h2>Experience</h2>
-                    <ul>
-                        <li>
-                            <span> Sun Project</span>
-                            <br />Responsible for presenting students' portfolios
-                            of an Art School Agency.
-                            <br />
-                            (E-commerce in React / Redux)
-                        </li>
-                        <li><span> Landing pages</span> (HTML, CSS, Javascript)</li>
-                        <li> <span>2016 - 2021</span> - Freelance Artist
-                        </li>
-                        <li> <span>August 2013 - July 2016</span> - Phisician
-                        </li>
-                    </ul>
-                </section>
-                <section class="main__education">
-                    <h2>Education</h2>
-                    <ul>
-                        <li> <span>March 2022 - current</span> - Epam Systems University Front-End
-                            Lab
-                        </li>
-                        <li> <span>February 2022 - current </span>- RS School Front-End Development
-                            (Lt)
-                        </li>
-                        <li> <span>October 2021 - January 2022</span> - Epam Systems Front-End
-                            Outside
-                            Training
-                        </li>
-                        <li> <span>July 2021 – February 2022</span> - FreeCodeCamp.org - Front-End
-                            Development
-                        </li>
-                        <li> <span>April 2021 – June 2021</span> - HTML, CSS course</li>
-                        <li> <span>September 2016 – May 2021</span> - Art School “Kluch”, Gomel,
-                            Belarus
-                        </li>
-                        <li><span> September 2007 – June 2013</span> - GSMU, Gomel, Belarus - Doctor
-                            of
-                            Medicine
-                        </li>
-                    </ul>
-                </section>
-            </main>
-        </div>
-    </div>
-    <script>
-        function check() {
-            if (document.querySelector('#inline-block').checked) {
-                document.querySelector('.flexbox').style.display = 'none'
-                document.querySelector('.inline-block').style.display = 'block'
+        <script>
+            function check() {
+                if (document.querySelector("#inline-block").checked) {
+                    document.querySelector(".flexbox").style.display = "none"
+                    document.querySelector(".inline-block").style.display = "block"
+                } else if (document.querySelector("#flexbox").checked) {
+                    document.querySelector(".inline-block").style.display = "none"
+                    document.querySelector(".flexbox").style.display = "flex"
+                }
             }
-            else if (document.querySelector('#flexbox').checked) {
-                document.querySelector('.inline-block').style.display = 'none'
-                document.querySelector('.flexbox').style.display = 'flex'
-            }
-        }
-        check()
-    </script>
-</body>
-
+            check()
+        </script>
+    </body>
 </html>
