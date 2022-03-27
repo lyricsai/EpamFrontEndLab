@@ -1,0 +1,236 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+h2,
+header {
+  text-align: center;
+  margin: 0.8rem;
+}
+
+.animation {
+  border: 1px dashed gray;
+  margin: 1.5rem auto;
+  padding: 1.5rem;
+  max-width: 700px;
+  width: 100%;
+  height: 6rem;
+  position: relative;
+}
+
+.animation.animation__03 {
+  height: 300px;
+}
+
+.animation.animation__06 {
+  height: 150px;
+}
+
+.square {
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid red;
+  position: absolute;
+}
+
+.animation__01 .square {
+  -webkit-animation: animation1 3s infinite;
+          animation: animation1 3s infinite;
+}
+
+.animation__02 .square {
+  -webkit-animation: animation2 3s infinite;
+          animation: animation2 3s infinite;
+}
+
+.animation__03 .square {
+  -webkit-animation: animation3 8s linear 30;
+          animation: animation3 8s linear 30;
+}
+
+.animation__04 .square {
+  -webkit-animation: animation4 8s infinite;
+          animation: animation4 8s infinite;
+}
+
+.animation__05 .square {
+  height: 2rem;
+  -webkit-animation: animation5 6s infinite;
+          animation: animation5 6s infinite;
+  border: none;
+  background-color: red;
+  top: -1px;
+}
+
+.animation__06 .square {
+  top: 5rem;
+  border: 1px solid blue;
+  -webkit-animation: animation6 4s ease alternate infinite;
+          animation: animation6 4s ease alternate infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.container {
+  width: 50%;
+  height: 2rem;
+  border: 1px solid red;
+  position: relative;
+}
+
+.hovered {
+  padding: 10px;
+  width: 15rem;
+  border: 1px solid red;
+  cursor: pointer;
+}
+
+.hovered:hover + .square {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+@-webkit-keyframes animation1 {
+  0% {
+    left: 1.5rem;
+  }
+  100% {
+    left: 70%;
+  }
+}
+
+@keyframes animation1 {
+  0% {
+    left: 1.5rem;
+  }
+  100% {
+    left: 70%;
+  }
+}
+
+@-webkit-keyframes animation2 {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: red;
+  }
+}
+
+@keyframes animation2 {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: red;
+  }
+}
+
+@-webkit-keyframes animation3 {
+  0% {
+    left: 1.5rem;
+    top: 20px;
+  }
+  25% {
+    left: 50%;
+    top: 20px;
+  }
+  50% {
+    left: 50%;
+    top: 50%;
+  }
+  75% {
+    left: 1.5rem;
+    top: 50%;
+  }
+  100% {
+    left: 1.5rem;
+    top: 20px;
+  }
+}
+
+@keyframes animation3 {
+  0% {
+    left: 1.5rem;
+    top: 20px;
+  }
+  25% {
+    left: 50%;
+    top: 20px;
+  }
+  50% {
+    left: 50%;
+    top: 50%;
+  }
+  75% {
+    left: 1.5rem;
+    top: 50%;
+  }
+  100% {
+    left: 1.5rem;
+    top: 20px;
+  }
+}
+
+@-webkit-keyframes animation4 {
+  0% {
+    left: 1.5rem;
+  }
+  50% {
+    left: 50%;
+  }
+  100% {
+    left: 1.5rem;
+  }
+}
+
+@keyframes animation4 {
+  0% {
+    left: 1.5rem;
+  }
+  50% {
+    left: 50%;
+  }
+  100% {
+    left: 1.5rem;
+  }
+}
+
+@-webkit-keyframes animation5 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes animation5 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes animation6 {
+  0% {
+    width: 10%;
+  }
+  100% {
+    width: calc(100% - 3rem);
+  }
+}
+
+@keyframes animation6 {
+  0% {
+    width: 10%;
+  }
+  100% {
+    width: calc(100% - 3rem);
+  }
+}
