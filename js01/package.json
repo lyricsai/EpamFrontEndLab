@@ -1,0 +1,23 @@
+{
+    "name": "weather",
+    "homepage": "https://lyricsai.github.io/EpamFrontEndLab/js01",
+    "version": "0.1.0",
+    "description": "weather belarus, first lesson: dependency, devdependency",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon index.js"
+    },
+    "keywords": [
+        "nodejs"
+    ],
+    "author": "Anastasiya Litvinenka",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.3",
+        "node-fetch": "^2.6.7"
+    },
+    "devDependencies": {
+        "gh-pages": "^3.2.3",
+        "nodemon": "^2.0.15"
+    }
+}
