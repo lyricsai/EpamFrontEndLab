@@ -32,13 +32,12 @@ app.use('/', router);
 
 router.get(`/:city`, async (req, res) => {
 
-    let city = req.params.city;
+    const city = req.params.city;
+    const latitude = coords.filter(item => item.city === city)[0]?.lat;
+    const longitude = coords.filter(item => item.city === city)[0]?.lon;
 
-    let latitude = coords.filter(item => item.city === city)[0]?.lat;
-    let longitude = coords.filter(item => item.city === city)[0]?.lon;
-
-    let response = await fetch(weatherAPI + `lat=${latitude}&lon=${longitude}`);
-    let data = await response.json();
+    const response = await fetch(weatherAPI + `lat=${latitude}&lon=${longitude}`);
+    const data = await response.json();
 
     let html = htmlInitial;
 
@@ -47,7 +46,7 @@ router.get(`/:city`, async (req, res) => {
                 <h2>${city[0].toUpperCase() + city.slice(1)}</h2>
                 <p>${data.weather[0].main}</p>
                 <img src=${data.weather[0].icon} alt="weather"/>
-                <p>Tenperature: ${data.main.temp.toFixed(1)}℃</p>
+                <p>Temperature: ${data.main.temp.toFixed(1)}℃</p>
                 </div>`;
     res.send(html);
 
