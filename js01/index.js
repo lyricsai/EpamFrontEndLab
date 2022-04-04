@@ -20,7 +20,7 @@ const coords = [
 //html navigation
 let htmlInitial = '<h1>Current Weather</h1><nav><ul style="display:flex; justify-content:space-evenly;">';
 for (let i = 0; i < coords.length; i++) {
-    htmlInitial += `<li><a href="${coords[i].city}">${coords[i].city.toUpperCase()}</a></li>`;;
+    htmlInitial += `<li><a href="${coords[i].city}">${coords[i].city.toUpperCase()}</a></li>`;
 }
 htmlInitial += '</ul></nav>';
 
