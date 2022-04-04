@@ -6,7 +6,7 @@ const router = express.Router();
 const app = express();
 const PORT = 3001;
 
-const weatherAPI = `https://fcc-weather-api.glitch.me/api/current?`;
+const weatherAPI = 'https://fcc-weather-api.glitch.me/api/current?';
 
 const coords = [
     { city: "brest", lat: 52.097, lon: 23.734 },
