@@ -1,0 +1,203 @@
+// font-family: "Montserrat", sans-serif;
+// font-family: "Open Sans", sans-serif;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+    color: #60606e;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+h2 {
+    position: relative;
+    font-size: 30px;
+    line-height: 48px;
+    font-family: "Montserrat";
+}
+
+h2::before {
+    width: 67px;
+    height: 21px;
+    background-color: #7beec7;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+}
+button {
+    width: 136px;
+    height: 51px;
+    background: rgba(123, 238, 199, 1);
+    color: #fff;
+    &.subscribe__touch_btn {
+        width: 166px;
+        background: #fff;
+        color: rgba(123, 238, 199, 1);
+    }
+}
+
+section {
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: 1140px;
+}
+section:first-child {
+    max-width: initial;
+}
+
+.header {
+    z-index: 10;
+    position: absolute;
+    top: 43px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 1140px;
+    width: 100%;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    &__burger_menu {
+        & span {
+            display: block;
+            height: 1px;
+            width: 15px;
+            background: rgba(96, 96, 110, 1);
+            margin-top: 6px;
+        }
+        & span:first-child {
+            width: 31px;
+            margin-top: 0;
+        }
+        & span:last-child {
+            width: 23px;
+        }
+    }
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    background: url("./assets/top.png") 0 0 / cover no-repeat;
+    filter: grayscale(100%);
+}
+
+.about {
+    font-size: 14px;
+    line-height: 30px;
+    color: #60606e;
+    font-weight: 400;
+    font-family: "Open Sans";
+    text-align: center;
+
+    &__grid_container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "p p pic pic"
+            "ul_first ul_second pic pic"
+            "ul_first ul_second pic pic";
+
+        & p {
+            grid-area: p;
+            text-align: left;
+        }
+
+        & ul {
+            text-align: left;
+
+            & li {
+                position: relative;
+                &::before {
+                    content: url("./assets/checkbox.svg");
+                    font-size: 14px;
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        & ul:first-child {
+            grid-area: ul_first;
+        }
+
+        & ul:last-child {
+            grid-area: ul_second;
+        }
+    }
+
+    &__img_container {
+        grid-area: pic;
+    }
+
+    & p {
+        font-family: "Open Sans";
+    }
+}
+
+.pricing {
+    text-align: center;
+    &__container {
+        display: flex;
+    }
+    &__item {
+        flex: 0 1 33.3%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.benefits {
+    display: flex;
+    text-align: center;
+    position: relative;
+
+    &__item {
+        flex: 0 1 25%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    & ion-icon,
+    & img {
+        &::before {
+            z-index: -1;
+            position: absolute;
+            content: "";
+            width: 67px;
+            height: 21px;
+            background-color: #7beec7;
+        }
+    }
+}
+
+.subscribe {
+    display: flex;
+}
+
+.footer {
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: 1140px;
+
+    color: #9a9a9a;
+
+    & .footer__top {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    & ul {
+        display: flex;
+    }
+}
