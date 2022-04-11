@@ -15,22 +15,7 @@ var b = { x: 0, y: 1, z: 3, a: 1, b: 2 };
 // intersect(a,b) // { x: 0, y: 1 }
 
 
-
 const add = (...args) => {
-    let result = {};
-    for (let i = args.length - 1; i >= 0; i--) {
-        for (let key of Object.keys(args[i])) {
-            if (key in result) {
-                result[key] = args[i][key] + result[key];
-            } else {
-                result[key] = args[i][key];
-            }
-        }
-    }
-    return result;
-};
-
-const add2 = (...args) => {
     return args.reduce((acc, curr) => {
         Object.keys(curr).forEach((key) => {
             acc[key] = acc[key] || 0;
@@ -40,14 +25,15 @@ const add2 = (...args) => {
     }, {});
 };
 
-const intersect = (x, y) => {
-    let result = {};
-    for (let key of Object.keys(x)) {
-        if (key in y && x[key] === y[key]) {
-            result[key] = x[key];
-        }
-    }
-    return result;
+const intersect = (...args) => {
+    return args.reduce((acc, curr) => {
+        Object.keys(curr).forEach((key) => {
+            if (key in args[1] && args[0][key] === args[1][key]) {
+                acc[key] = args[0][key];
+            }
+        });
+        return acc;
+    }, {});
 };
 
 console.log(add(a, b));
