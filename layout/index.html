@@ -15,11 +15,21 @@
     </head>
     <body>
         <header class="header">
-            <div class="header__logo">AKAD.</div>
+            <div class="header__logo"><a href="#">AKAD.</a></div>
             <div class="header__burger_menu">
                 <span></span>
                 <span></span>
                 <span></span>
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#about">About us</a></li>
+                        <li><a href="#benefits">Services</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#subscribe">Contact us</a></li>
+                    </ul>
+                </nav>
             </div>
         </header>
         <main class="main">
@@ -31,7 +41,7 @@
                     <span>Services</span>
                 </p>
             </section>
-            <section class="about">
+            <section class="about" id="about">
                 <h2>What we do</h2>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
@@ -64,36 +74,42 @@
                     </div>
                 </div>
             </section>
-            <section class="benefits">
+            <section class="benefits" id="benefits">
                 <div class="benefits__item">
-                    <!-- <img src="./assets/pulse.svg" alt="pulse" /> -->
-                    <ion-icon name="pulse"></ion-icon>
-                    <h5>Keep pulse Going</h5>
+                    <span class="benefits__icon_back">
+                        <img src="./assets/icons/pulse.png" alt="pulse" />
+                    </span>
+                    <h4>Keep pulse Going</h4>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                         tempor incididunt .
                     </p>
                 </div>
                 <div class="benefits__item">
-                    <!-- <img src="./assets/pulse.svg" alt="pulse" /> -->
-                    <ion-icon name="infinity-outline"></ion-icon>
-                    <h5>Pass the limits</h5>
+                    <span class="benefits__icon_back">
+                        <img src="./assets/icons/infinity.png" alt="infinity" />
+                    </span>
+                    <h4>Pass the limits</h4>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                         tempor incididunt .
                     </p>
                 </div>
                 <div class="benefits__item">
-                    <img src="./assets/lamp.png" alt="idea" />
-                    <h5>Great Ideas</h5>
+                    <span class="benefits__icon_back">
+                        <img src="./assets/icons/idea.png" alt="idea" />
+                    </span>
+                    <h4>Great Ideas</h4>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                         tempor incididunt .
                     </p>
                 </div>
                 <div class="benefits__item">
-                    <ion-icon name="options-outline"></ion-icon>
-                    <h5>Awesome Support</h5>
+                    <span class="benefits__icon_back">
+                        <img src="./assets/icons/settings.png" alt="settings" />
+                    </span>
+                    <h4>Awesome Support</h4>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                         tempor incididunt .
@@ -148,25 +164,29 @@
                     </div>
                 </div>
             </section>
-            <section class="subscribe">
-                <div class="subscribe__touch">
-                    <h2>YOU THINK WE'RE COOL ? LET'S WORK TOGETHER</h2>
-                    <button class="subscribe__touch_btn">Get in Touch</button>
-                </div>
-                <div class="subscribe__form">
-                    <h3>STAY INFORMED WITH OUR NEWSLETTER</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua.
-                    </p>
-                    <input
-                        type="email"
-                        name="email"
-                        id="email"
-                        placeholder="Your email"
-                        autocomplete="email"
-                    />
-                    <button type="submit">Send</button>
+            <section class="subscribe" id="subscribe">
+                <div class="container">
+                    <div class="subscribe__touch">
+                        <h2>YOU THINK WE'RE COOL ? LET'S WORK TOGETHER</h2>
+                        <button class="subscribe__touch_btn">Get in Touch</button>
+                    </div>
+                    <div class="subscribe__form">
+                        <h3>STAY INFORMED WITH OUR NEWSLETTER</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        <form action="POST">
+                            <input
+                                type="email"
+                                name="email"
+                                id="email"
+                                placeholder="Your email"
+                                autocomplete="email"
+                            />
+                            <button type="submit">Send</button>
+                        </form>
+                    </div>
                 </div>
             </section>
         </main>
@@ -174,12 +194,12 @@
             <div class="footer__top">
                 <nav>
                     <ul>
-                        <li>Home</li>
-                        <li>About us</li>
-                        <li>Services</li>
-                        <li>Portfolio</li>
-                        <li>Blog</li>
-                        <li>Contact us</li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#about">About us</a></li>
+                        <li><a href="#benefits">Services</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#subscribe">Contact us</a></li>
                     </ul>
                 </nav>
                 <span>Created by akhouad 2016. All Rights Reserved</span>
@@ -187,22 +207,34 @@
             <div class="footer__bottom">
                 <ul>
                     <li>
-                        <a href="#"><img src="./assets/facebook.svg" alt="f" /></a>
+                        <a href="https://www.facebook.com" target="_blank"
+                            ><img src="./assets/icons/facebook.svg" alt="f"
+                        /></a>
                     </li>
                     <li>
-                        <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                        <a href="https://www.twitter.com" target="_blank"
+                            ><ion-icon name="logo-twitter"></ion-icon
+                        ></a>
                     </li>
                     <li>
-                        <a href="#"><ion-icon name="logo-youtube"></ion-icon></a>
+                        <a href="https://www.youtube.com" target="_blank"
+                            ><ion-icon name="logo-youtube"></ion-icon
+                        ></a>
                     </li>
                     <li>
-                        <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
+                        <a href="https://www.linkedin.com" target="_blank"
+                            ><ion-icon name="logo-linkedin"></ion-icon
+                        ></a>
                     </li>
                     <li>
-                        <a href="#"><ion-icon name="logo-pinterest"></ion-icon></a>
+                        <a href="https://www.pinterest.com" target="_blank"
+                            ><ion-icon name="logo-pinterest"></ion-icon
+                        ></a>
                     </li>
                     <li>
-                        <a href="#"><img src="./assets/instagram.svg" alt="insta" /></a>
+                        <a href="https://www.instagram.com" target="_blank"
+                            ><img src="./assets/icons/instagram.svg" alt="insta"
+                        /></a>
                     </li>
                 </ul>
             </div>
