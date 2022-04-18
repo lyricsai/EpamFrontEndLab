@@ -36,9 +36,9 @@
             <section class="top">
                 <h1 class="top__heading">Our Services</h1>
                 <p>
-                    <span>Home</span>
+                    <span><a href="#">Home</a></span>
                     <span> / </span>
-                    <span>Services</span>
+                    <span><a href="#benefits">Services</a></span>
                 </p>
             </section>
             <section class="about" id="about">
@@ -116,7 +116,7 @@
                     </p>
                 </div>
             </section>
-            <section class="pricing">
+            <section class="pricing" id="pricing">
                 <h2>Pricing plans</h2>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
@@ -134,7 +134,7 @@
                             <li>Ut laoreet dolore</li>
                             <li>Magna aliquam erat volutpat</li>
                         </ul>
-                        <button>Get Started</button>
+                        <a href="#pricing">Get Started</a>
                     </div>
                     <div class="pricing__item">
                         <h3>Advanced</h3>
@@ -147,7 +147,7 @@
                             <li>Ut laoreet dolore</li>
                             <li>Magna aliquam erat volutpat</li>
                         </ul>
-                        <button>Get Started</button>
+                        <a href="#pricing">Get Started</a>
                     </div>
                     <div class="pricing__item">
                         <h3>Smart</h3>
@@ -160,7 +160,7 @@
                             <li>Ut laoreet dolore</li>
                             <li>Magna aliquam erat volutpat</li>
                         </ul>
-                        <button>Get Started</button>
+                        <a href="#pricing">Get Started</a>
                     </div>
                 </div>
             </section>
@@ -176,13 +176,14 @@
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                             tempor incididunt ut labore et dolore magna aliqua.
                         </p>
-                        <form action="POST">
+                        <form onsubmit="return (e)=>e.preventDefault()">
                             <input
                                 type="email"
                                 name="email"
                                 id="email"
                                 placeholder="Your email"
                                 autocomplete="email"
+                                required
                             />
                             <button type="submit">Send</button>
                         </form>
@@ -192,16 +193,21 @@
         </main>
         <footer class="footer">
             <div class="footer__top">
-                <nav>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#about">About us</a></li>
-                        <li><a href="#benefits">Services</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#subscribe">Contact us</a></li>
-                    </ul>
-                </nav>
+                <div class="footer__burger_menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <nav>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#about">About us</a></li>
+                            <li><a href="#benefits">Services</a></li>
+                            <li><a href="#">Portfolio</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#subscribe">Contact us</a></li>
+                        </ul>
+                    </nav>
+                </div>
                 <span>Created by akhouad 2016. All Rights Reserved</span>
             </div>
             <div class="footer__bottom">
@@ -244,5 +250,18 @@
             src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
         ></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script>
+            //animation
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        document.querySelectorAll(".benefits__item span").forEach((e) => {
+                            e.classList.add("animation");
+                        });
+                    }
+                });
+            });
+            observer.observe(document.querySelector(".benefits"));
+        </script>
     </body>
 </html>
