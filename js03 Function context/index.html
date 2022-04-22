@@ -84,31 +84,87 @@
 
         /******  TODO: Fix event handlers. Do not touch functions' bodies ******/
 
-        let attachEvent = myComponent.bind(myComponent, myComponent.state);
+        component.attachEvent(
+            "click",
+            function (eventNameForComponentState) {
+                this.countButtonClicks();
+                component.state[eventNameForComponentState]++;
+            }.bind(customNameSpace, "clickedCount")
+        );
 
-        // attachEvent.bind(myComponent);
-        // console.log(attachEvent());
+        component.attachEvent(
+            "contextmenu",
+            function (eventNameForComponentState, event) {
+                event.preventDefault();
+                let contextMenu = document.createElement("p");
+                contextMenu.innerText = "ContextMenu was here";
+                event.target.parentElement.appendChild(contextMenu);
+                component.state[eventNameForComponentState]++;
+            }.bind(customNameSpace, "rightClickedCount")
+        );
 
-        component.attachEvent("click", function (eventNameForComponentState) {
-            this.customNameSpace.countButtonClicks();
-            component.state[eventNameForComponentState]++;
-        });
-
-        component.attachEvent("contextmenu", function (eventNameForComponentState, event) {
-            event.preventDefault();
-            let contextMenu = document.createElement("p");
-            contextMenu.innerText = "ContextMenu was here";
-            event.target.parentElement.appendChild(contextMenu);
-            component.state[eventNameForComponentState]++;
-        });
-
-        component.attachEvent("mouseover", function (eventNameForComponentState) {
-            let currentColor = this.element.getAttribute("style");
-            let color = currentColor === "color: red" ? "color: green" : "color: red";
-            this.element.setAttribute("style", color);
-            this.state[eventNameForComponentState]++;
-        });
+        component.attachEvent(
+            "mouseover",
+            function (eventNameForComponentState) {
+                let currentColor = this.element.getAttribute("style");
+                let color = currentColor === "color: red" ? "color: green" : "color: red";
+                this.element.setAttribute("style", color);
+                this.state[eventNameForComponentState]++;
+            }.bind(component, "hoveredCount")
+        );
 
         component.render("out");
+
+        //Optional:
+        //Write a function to count the sum of all values in an object using method borrowing.
+        //Ignore not a number values. Try to use both ways: Array.prototype.reduce.apply and [].reduce.call.
+        //Any of them is fine. Push the code in a separate file 'sumObjectValues.js' at the same repo.
+
+        // Example:
+
+        // function sumObjectValues() { ... }
+        // let object = {
+        //   a: 2,
+        //   name: 'John',
+        //   age: 23
+        // };
+        // sumObjectValues(object) // 25
+
+        // [].reduce.call()
+
+        const sumObjectValues = (obj) => {
+            let values = Object.values(obj).filter((e) => typeof e === "number");
+
+            return [].reduce.call(values, (acc, curr) => {
+                return acc + curr;
+            });
+        };
+
+        // Array.prototype.reduce.apply
+
+        const sumObjectValues2 = (obj) => {
+            let values = Object.values(obj).filter((e) => typeof e === "number");
+
+            function sum() {
+                return [].reduce.call(arguments, function (acc, curr) {
+                    return (acc += curr);
+                });
+            }
+
+            function applyReduce(func) {
+                return func.apply(this, [].slice.call(arguments, 1));
+            }
+
+            return applyReduce(sum, ...values);
+        };
+
+        let object = {
+            a: 2,
+            name: "John",
+            age: 23,
+        };
+
+        console.log(sumObjectValues(object));
+        console.log(sumObjectValues2(object));
     </script>
 </html>
