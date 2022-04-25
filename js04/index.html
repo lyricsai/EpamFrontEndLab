@@ -80,12 +80,14 @@
         render(data);
 
         function delayLiveSearch(f, ms) {
+            let timer;
             return function () {
-                setTimeout(() => f.apply(this, arguments), ms);
+                clearTimeout(timer);
+                timer = setTimeout(() => f.apply(this, arguments), ms);
             };
         }
 
-        let f500 = delayLiveSearch(handleLiveSearch, 1000);
+        let delay500 = delayLiveSearch(handleLiveSearch, 500);
 
         /********** Live Search *********/
 
