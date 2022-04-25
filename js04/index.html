@@ -81,6 +81,7 @@
 
         function delayLiveSearch(f, ms) {
             let timer;
+            
             return function () {
                 clearTimeout(timer);
                 timer = setTimeout(() => f.apply(this, arguments), ms);
