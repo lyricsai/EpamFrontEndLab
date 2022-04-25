@@ -88,23 +88,22 @@
             };
         }
 
-        let delay500 = delayLiveSearch(handleLiveSearch, 500);
+        const delay500 = delayLiveSearch(handleLiveSearch, 500);
 
         /********** Live Search *********/
 
-        document
+          document
             .getElementById("liveSearchName")
             .addEventListener("input", function (e) {
                 //TODO: use delayLiveSearch to delay backend call
-                f500(e);
+                delay500(e);
             });
 
         document
             .getElementById("liveSearchSurname")
             .addEventListener("input", function (e) {
                 //TODO: use delayLiveSearch to delay backend call
-                console.log("input");
-                f500(e);
+                delay500(e);
             });
 
         /********** Live Search *********/
