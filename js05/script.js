@@ -29,7 +29,7 @@ const showPermutatian = (string) => {
         result.push(s);
     }
 
-    output.innerHTML = [...new Set(result.sort())]
+    output.innerHTML = [...new Set(result.sort((a, b) => a.localeCompare(b)))]
         .map(e => `<li>${e}</li>`).join("");
 };
 
@@ -58,10 +58,10 @@ function permute(string) {
         usedChars.pop();
     });
 
-    output.innerHTML = [...new Set(result.sort())]
+    output.innerHTML = [...new Set(result.sort((a, b) => a.localeCompare(b)))]
         .map(e => `<li>${e}</li>`).join("");
 };
 
 
-btn.addEventListener('click', () => showPermutatian(input.value));
-// btn.addEventListener('click', () => permute(input.value));
+// btn.addEventListener('click', () => showPermutatian(input.value));
+btn.addEventListener('click', () => permute(input.value));
