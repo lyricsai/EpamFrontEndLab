@@ -3,7 +3,6 @@
 // Add example of usage of these classes, e.g., create some instances, display data related to them
 // Push code to repo “sweet sugar”
 
-
 class Entity {
     constructor(name) {
         this.name = name;
@@ -14,25 +13,34 @@ class Entity {
 }
 
 class Stuff extends Entity {
-
+    digital = this.digital;
 }
 
 class Box extends Entity {
     stuff = [];
-
 }
 
 class User extends Entity {
     box = [];
 }
 
-const user1 = new User('Pete');
-const box1 = new Box('Big box');
-const stuff1 = new Stuff('something');
-const stuff2 = new Stuff('anything');
+const pete = new User("Pete");
+const bigBox = new Box("Big box");
+const laptop = new Stuff("Laptop");
+const pencils = new Stuff("Pencils");
+const notebook = new Stuff("Notebook");
 
-box1.stuff.push(stuff1, stuff2);
+bigBox.stuff.push(laptop, pencils, notebook);
 
-user1.box.push(box1);
+pete.box = bigBox;
 
-console.log(user1);
+console.log(pete);
+
+const p = document.createElement("p");
+document.querySelector("body").appendChild(p);
+
+p.innerHTML = `<strong>Hello, ${
+    pete.name
+}.</strong> You have <em>${pete.box.stuff.map(
+    (e) => " " + e.name
+)}</em> in your box <em>${pete.box.name}</em>`;
