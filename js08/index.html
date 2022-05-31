@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Public API</title>
+    </head>
+    <body>
+        <main>
+            <form>
+                <select
+                    name="category"
+                    id="selectCategories"
+                    onchange="entriesData(this.value)"
+                >
+                    <option value="" selected>Choose from</option>
+                </select>
+                <input
+
+                    name="title"
+                    id="selectTitles"
+                    onchange="showEntries(this.value)"
+                >
+                  
+                </input>
+            </form>
+            <div id="table"></div>
+        </main>
+        <script src="./script.js"></script>
+    </body>
+</html>
