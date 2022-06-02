@@ -1,15 +1,14 @@
 const selectCategories = document.getElementById('selectCategories');
-const selectTitles = document.getElementById('selectTitles');
 const table = document.getElementById('table');
 const body = document.querySelector('tbody');
+const input = document.querySelector('#dropdown__input');
 
 const url = 'https://api.publicapis.org/';
 const endpoints = {
-    entries: 'entries', categories: 'categories', titles: 'entries?title'
+    entries: 'entries', categories: 'categories'
 };
 
 let cats = [];
-let entries = [];
 
 const makeCell = (text) => {
     const td = document.createElement('td');
@@ -31,78 +30,86 @@ const showCategories = async () => {
     return data.categories;
 };
 
-const debounce = (f, ms) => {
-
-    let isCooldown = false;
-    return function() {
-        if(isCooldown) return;
-        f.apply(this, arguments);
-        isCooldown = true;
-        setTimeout(() => isCooldown = false, ms);
-    };
+const wait = (delay) => {
+    return new Promise((resolve) => setTimeout(resolve, delay));
 };
 
-const showEntries = async (category) => {
-
-    body.innerHTML = '';
-    let query = '';
-    if(category) {
-
-        query = `?category=${category}`;
-        console.log(query);
+const fetchRetry = (url, delay, tries) => {
+    function onError(err) {
+        triesLeft = tries - 1;
+        if(!triesLeft) {
+            throw err;
+        }
+        return wait(delay).then(() => fetchRetry(url, delay, triesLeft));
     }
-
-    try {
-        let response = await fetch(url + endpoints.entries + query);
-
-        let data = await response.json();
-        entries = data.entries.map(e => e.API);
-        let filtered = filterFunction();
-
-        return data.entries.map(e => {
-            if(filtered.includes(e.API)) {
-                return e;
-            }
-        });
-
-    } catch(err) {
-        console.error(`This error occured: ${err}`);
-        return [];
-    }
-
+    return fetch(url).catch(onError);
 };
 
-let categories = showCategories().then(res => res.map(c => {
+
+const categories = showCategories().then(res => res.map(c => {
     cats.push(c);
     return selectCategories.innerHTML += `<option value=${c}>${c}</option>`;
 }));
-
-
-const filtering = (arr) => {
-    const input = document.getElementById("dropdown__input");
-    const filter = input.value.toLowerCase();
-    if(!input.value) return entries;
-    return arr.map(e => {
-        if(e.firstElementChild.innerText.toLowerCase().indexOf(filter) > -1) {
-            e.style.display = "";
-        } else {
-            e.style.display = "none";
-        }
-    });
-};
 
 const dropDownSearch = () => {
     document.getElementById("dropdown").classList.toggle("show");
 };
 
-const filterFunction = () => {
-    let rows = [...document.querySelectorAll("tr")];
-    return filtering(rows);
+const filterFunction = async (category = '', title = '') => {
+
+    body.innerHTML = '';
+    let query = '';
+    if(category) {
+        query = `?category=${category}&`;
+
+    } else {
+        query = '?';
+    }
+    if(title) {
+        query += `title=${title}`;
+    }
+
+    try {
+        let response = await fetchRetry(url + endpoints.entries + query, 200, 3);
+        let data = await response.json();
+        return data.entries;
+
+    } catch(error) {
+        console.log('request failed', error);
+    }
+};
+
+const entriesData = () => filterFunction(selectCategories.value, input.value)
+    .then(res => {
+        if(res) {
+            return res.map(e => {
+                return body.appendChild(makeRow(e));
+            });
+        } return;
+    })
+    .catch(error => console.error(error));
+
+const delayLiveSearch = (f, ms) => {
+    let timer;
+    return function() {
+        clearTimeout(timer);
+        timer = setTimeout(() => f.apply(this, arguments), ms);
+    };
+};
+
+const handleLiveSearch = (e) => {
+    e.target.disabled = true;
+    setTimeout(() => {
+        e.target.disabled = false;
+        e.target.focus();
+    }, 300);
 
 };
 
-let entriesData = () => showEntries(selectCategories.value).then(res => res.map(e => {
-    return body.appendChild(makeRow(e));
-}));
+const delay500 = delayLiveSearch(handleLiveSearch, 500);
+
+input.addEventListener("input", function(e) {
+    delay500(e);
+});
 
 entriesData();

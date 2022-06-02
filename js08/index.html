@@ -12,7 +12,7 @@
             <select
                 name="category"
                 id="selectCategories"
-                onchange="entriesData(this.value)"
+                onchange="entriesData(this.value,dropdown__input.value)"
                 class="dropbtn"
             >
                 <option value="" selected>Choose from</option>
@@ -30,7 +30,7 @@
                         type="text"
                         placeholder="Search.."
                         id="dropdown__input"
-                        onkeyup="filterFunction()"
+                        onkeyup="entriesData(selectCategories.value,this.value)"
                     />
                 </div>
             </div>
