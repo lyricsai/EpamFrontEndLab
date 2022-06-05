@@ -139,5 +139,3 @@ buttonMenuSaved.addEventListener('click', getList);
 buttonTheme.addEventListener('click', () => {
     switchTheme();
 });
-
-console.log(localStorage.getItem("theme"));
