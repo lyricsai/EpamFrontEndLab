@@ -1,10 +1,11 @@
 import {MENU} from './menu.js';
+import {switchTheme} from './switchTheme.js';
 
 const menu = document.querySelector('#menu');
 const h4 = document.querySelector('h4');
 
-const buttonMenu = document.querySelector('#buttonMenu');
 const buttonTheme = document.querySelector('#buttonTheme');
+const buttonMenu = document.querySelector('#buttonMenu');
 const buttonSaveUser = document.querySelector('#buttonSaveUser');
 const buttonSaveMenu = document.querySelector('#buttonSaveMenu');
 const buttonMenuSaved = document.querySelector('#buttonMenuSaved');
@@ -20,7 +21,6 @@ let menuList = [];
 const randomElement = (array) => array[Math.floor(Math.random() * array.length)];
 
 const getDayMenu = () => {
-
     let menuChoice = [];
     if(vegan.checked) {
         menuChoice = MENU.filter(e => e.type === 'vegan');
@@ -62,7 +62,6 @@ const render = () => {
 };
 
 const getList = () => {
-
     menuList = JSON.parse(localStorage.getItem('menu'));
     render();
 
@@ -89,34 +88,13 @@ const getMenu = () => {
 
 };
 
-//theme
-const isDark = () => {
-    return localStorage.getItem("theme");
-};
-
-const toggleRootClass = () => {
-    document.querySelector(":root").classList.toggle("dark-mode");
-};
-
-const switchTheme = () => {
-    if(isDark()) {
-        localStorage.removeItem("theme");
-    } else {
-        localStorage.setItem("theme", "dark");
-    }
-};
-
-if(isDark()) {
-    toggleRootClass();
-}
-
 const getUser = () => {
     return localStorage.getItem("user");
 };
 
 if(getUser()) h4.innerText = getUser();
 
-//todo
+
 const saveUser = () => {
     if(confirm('Сохранить меню?')) {
         localStorage.setItem("user", username.value);
@@ -151,14 +129,13 @@ modal.addEventListener('blur', (event) => {
 
 buttonMenu.addEventListener('click', getMenu);
 
-buttonTheme.addEventListener('click', () => {
-    switchTheme();
-    toggleRootClass();
-});
-
 buttonSaveUser.addEventListener('click', saveUser);
 
 buttonSaveMenu.addEventListener('click',
     showModal);
 
 buttonMenuSaved.addEventListener('click', getList);
+
+buttonTheme.addEventListener('click', () => {
+    switchTheme();
+});
