@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Public API</title>
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <main>
+            <select
+                name="category"
+                id="selectCategories"
+                onchange="entriesData(this.value,dropdown__input.value)"
+                class="dropbtn"
+            >
+                <option value="" selected>Choose from</option>
+            </select>
+            <div class="dropdown__container">
+                <button
+                    type="button"
+                    onclick="dropDownSearch()"
+                    class="dropbtn"
+                >
+                    Titles
+                </button>
+                <div id="dropdown" class="dropdown-content">
+                    <input
+                        type="text"
+                        placeholder="Search.."
+                        id="dropdown__input"
+                        onkeyup="entriesData(selectCategories.value,this.value)"
+                    />
+                </div>
+            </div>
+            <table id="table">
+                <thead>
+                    <tr>
+                        <td>Title</td>
+                        <td>Description</td>
+                        <td>Auth</td>
+                        <td>HTTPS</td>
+                        <td>Cors</td>
+                        <td>Link</td>
+                        <td>Category</td>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </main>
+        <script src="./script.js"></script>
+    </body>
+</html>
